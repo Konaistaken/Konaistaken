@@ -1,0 +1,149 @@
+-- Tower of hell
+
+
+
+if game.PlaceId == 1962086868 then
+
+
+	
+
+
+	getgenv().godmode = false
+
+
+	game.Players.LocalPlayer.CharacterAdded:Connect(function(char)
+
+
+		char:WaitForChild("KillScript").Disabled = getgenv().godmode
+
+
+	end)
+
+
+	
+
+
+	local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+
+
+	
+
+
+	local Window = Library.CreateLib("Bubble Gum Hub", "Sentinel")
+
+
+	
+
+
+	local Tab = Window:NewTab("Tower Of Hell")
+
+
+	local Tab2 = Window:NewTab("Credit")
+
+
+	
+
+
+	local Section = Tab:NewSection("TOH")
+
+
+	local Section2 = Tab:NewSection("")
+
+
+	
+
+
+	
+
+
+	Section:NewButton("Disable Anticheat", "Disables The Anticheat", function()
+
+
+		--the disabler script made by myself
+
+
+		getsenv(game:GetService("Players").LocalPlayer.PlayerScripts.LocalScript).kick = function()
+
+
+			return; -- replaces kick function with a function that just returns
+
+
+		end
+
+
+	end)
+
+
+	
+
+
+	
+
+
+	Section:NewToggle("God Mode", "God Mode is Cool", function(state)
+
+
+		local char = game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:wait()
+
+
+		if state then
+
+
+			getgenv().godmode = true
+
+
+			char.KillScript.Disabled = getgenv().godmode
+
+
+		else
+
+
+			getgenv().godmode = false
+
+
+			char.KillScript.Disabled = getgenv().godmode
+
+
+		end
+
+
+	end)
+
+
+	
+
+
+	Section:NewButton("Fly", "Why walk when you can fly?", function()
+
+
+		loadstring(game:HttpGet("https://cdn.wearedevs.net/scripts/Fly.txt"))()
+
+
+	end)
+
+
+	
+
+
+	Section:NewButton("Infinite Jump", "Spam the spacebar to jump as high as you want.", function()
+
+
+		loadstring(game:HttpGet("https://cdn.wearedevs.net/scripts/Infinite%20Jump.txt"))()
+
+
+	end)
+
+
+	
+
+
+	Section2:NewLabel("Bubble Gum Softworks")
+
+
+	
+
+
+	Section2:NewLabel("Kona#2466")
+
+
+end
