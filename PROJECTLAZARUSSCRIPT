@@ -1,23 +1,4 @@
 if game.PlaceId == 443406476 then
-	old = hookmetamethod(game, "__namecall", function(self, ...)
-		if getnamecallmethod() == "InvokeServer" and self.Name == "UpdateDamageKey" then
-			a = {...}
-			getgenv().id = a[1]
-		end
-		return old(self, ...)
-	end)
-	
-	game:GetService("UserInputService").InputBegan:Connect(function(k,t)
-		if not t and k.KeyCode == Enum.KeyCode.K then
-			for i,v in pairs(workspace.Baddies:GetChildren()) do
-				pcall(function()
-					v.Humanoid.Damage:FireServer({["Knifed"] = true, ["BodyPart"] = v.HumanoidRootPart, ["Damage"] = math.huge}, id)
-				end)
-			end
-		end
-	end)
-
-	
 	local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 	
 	local Window = Library.CreateLib("Bubble Gum Hub", "Sentinel")
@@ -25,8 +6,6 @@ if game.PlaceId == 443406476 then
 	local Tab = Window:NewTab("Project Lazarus")
 	
 	local Section = Tab:NewSection("Project Lazaurs Script")
-	
-	Section:NewLabel("Press K to kill every zombie")
 	
 	Section:NewButton("Infinite Money", "Infinite Money For Every Round", function()
 		for i = 1,10000 do
