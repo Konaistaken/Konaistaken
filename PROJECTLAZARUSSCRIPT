@@ -135,4 +135,6 @@ if game.PlaceId == 443406476 then
 	Section:NewLabel("UI Made By Bubble Gum Softworks")
 	
 	Section:NewLabel("Scripted By Kona#2466")
+	
+	Section:NewLabel("Enjoy!")
 end
