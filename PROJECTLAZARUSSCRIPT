@@ -5,7 +5,5 @@ if game.PlaceId == 443406476 then
 	
 	local Tab = Window:NewTab("Project Lazarus")
 	
-	local Section = Tab:NewSection("Project Lazaurs Script")
-	
-	Section:NewLabel("Project Lazaurs Script is Patched Sorry :<")
+	local Section = Tab:NewSection("Patched")
 end
