@@ -25,7 +25,7 @@ if game.PlaceId == 5926001758 then
 	local Section = Tab:NewSection("Color Block")
 
 
-	local CreditSec = Tab:NewSection("Credit")
+	local CreditSec = Credit:NewSection("Credit")
 
 
 	
