@@ -181,13 +181,13 @@ if game.PlaceId == 5926001758 then
 	
 
 
-	CreditSec:NewLabel("UI By Bubble Gum Softworks")
+	CreditSec:NewLabel("UI By Bubble Gum Softworks!")
 
 
 	
 
 
-	CreditSec:NewLabel("Scripted By Kona#2466")
+	CreditSec:NewLabel("Scripted By Kona#2466!")
 
 
 end
