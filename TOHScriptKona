@@ -23,66 +23,54 @@ if game.PlaceId == 1962086868 then
 	
 
 
-	local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-
-
-	
-
-
-	local Window = Library.CreateLib("Bubble Gum Hub", "Sentinel")
-
+	local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
 	
 
 
-	local Tab = Window:NewTab("Tower Of Hell")
+	local Window = OrionLib:MakeWindow({Name = "Bubble Gum Hub|Tower Of Hell", HidePremium = false, SaveConfig = true, ConfigFolder = "BubbleGumHub"})
+
+	OrionLib:MakeNotification({
+	Name = "Game Support",
+	Content = "Game Supported Welcome!",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
 
 
-	local Tab2 = Window:NewTab("Credit")
+	local Tab = Window:MakeTab({
+	Name = "Tower Of Hell",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+
+
+	local Tab2 = Window:MakeTab({
+	Name = "Credit",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
 
 
 	
-
-
-	local Section = Tab:NewSection("TOH")
-
-
-	local Section2 = Tab:NewSection("")
-
-
-	
-
-
-	
-
-
-	Section:NewButton("Disable Anticheat", "Disables The Anticheat", function()
-
-
-		--the disabler script made by myself
-
-
-		getsenv(game:GetService("Players").LocalPlayer.PlayerScripts.LocalScript).kick = function()
+Tab:AddButton({
+	Name = "Disable Anticheat",
+	Callback = function()
+      		getsenv(game:GetService("Players").LocalPlayer.PlayerScripts.LocalScript).kick = function()
 
 
 			return; -- replaces kick function with a function that just returns
 
 
 		end
+  	end    
+})
 
-
-	end)
-
-
-	
-
-
-	
-
-
-	Section:NewToggle("God Mode", "God Mode is Cool", function(state)
-
-
+Tab:AddToggle({
+	Name = "God Mode",
+	Default = false,
+	Callback = function(state)
 		local char = game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:wait()
 
 
@@ -105,45 +93,25 @@ if game.PlaceId == 1962086868 then
 
 
 		end
+	end    
+})
 
+Tab:AddButton({
+	Name = "Fly",
+	Callback = function()
+      		loadstring(game:HttpGet("https://cdn.wearedevs.net/scripts/Fly.txt"))()
+  	end    
+})
 
-	end)
+Tab:AddButton({
+	Name = "Infinite Jump",
+	Callback = function()
+      		loadstring(game:HttpGet("https://cdn.wearedevs.net/scripts/Infinite%20Jump.txt"))()
+  	end    
+})
 
-
-	
-
-
-	Section:NewButton("Fly", "Why walk when you can fly?", function()
-
-
-		loadstring(game:HttpGet("https://cdn.wearedevs.net/scripts/Fly.txt"))()
-
-
-	end)
-
-
-	
-
-
-	Section:NewButton("Infinite Jump", "Spam the spacebar to jump as high as you want.", function()
-
-
-		loadstring(game:HttpGet("https://cdn.wearedevs.net/scripts/Infinite%20Jump.txt"))()
-
-
-	end)
-
-
-	
-
-
-	Section2:NewLabel("Bubble Gum Softworks")
-
-
-	
-
-
-	Section2:NewLabel("Kona#2466")
-
+local Section1 = Tab2:AddSection({
+	Name = "Scripting: Bubble Gum Softworks Team"
+})
 
 end
